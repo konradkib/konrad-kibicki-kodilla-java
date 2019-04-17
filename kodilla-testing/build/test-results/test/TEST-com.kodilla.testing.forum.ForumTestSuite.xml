@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.forum.ForumTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-04-14T20:18:59" hostname="DESKTOP-Q4N3LJF" time="0.003">
-  <properties/>
-  <testcase name="testCaseUser" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.003"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
