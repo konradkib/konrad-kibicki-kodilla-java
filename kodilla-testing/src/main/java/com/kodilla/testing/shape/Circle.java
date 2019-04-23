@@ -42,10 +42,8 @@ public class Circle implements Shape {
 
         @Override
         public int hashCode() {
-            int result;
-            long temp;
-            result = shapeName.hashCode();
-            temp = Double.doubleToLongBits(r);
+            int result = shapeName.hashCode();
+            long temp = Double.doubleToLongBits(r);
             result = 31 * result + (int) (temp ^ (temp >>> 32));
             return result;
         }

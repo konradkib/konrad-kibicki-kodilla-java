@@ -42,10 +42,8 @@ public class Square implements Shape{
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        result = shapeName.hashCode();
-        temp = Double.doubleToLongBits(sideLength);
+        int result = shapeName.hashCode();
+        long temp = Double.doubleToLongBits(sideLength);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }

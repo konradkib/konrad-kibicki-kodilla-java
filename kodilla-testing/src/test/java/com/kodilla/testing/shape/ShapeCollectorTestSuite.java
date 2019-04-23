@@ -40,18 +40,18 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(triangle1);
         shapeCollector.addFigure(circle2);
         //Then
-        Assert.assertEquals(6,shapeCollector.getFigureList().size());
+        Assert.assertEquals(6,shapeCollector.getFigures().size());
     }
 
     @Test
     public void testRemoveFigure(){
         //Given
         Triangle triangle = new Triangle("Triangle",12,0.5);
+        shapeCollector.addFigure(triangle);
         //When
         boolean result = shapeCollector.removeFigure(triangle);
         //Then
-        Assert.assertFalse(result);
-        Assert.assertEquals(0,shapeCollector.getFigureList().size());
+        Assert.assertEquals(0,shapeCollector.getFigures().size());
     }
 
     @Test
@@ -65,18 +65,5 @@ public class ShapeCollectorTestSuite {
         Assert.assertEquals(circle2, retrievedShape);
     }
 
-    @Test
-    public void testShowFigures(){
-        //Given
-        Square square = new Square("Square",6);
 
-
-        //When
-        shapeCollector.addFigure(square);
-        String result = square.getShapeName();
-
-        //Then
-        Assert.assertNotEquals("Circle",result);
-
-    }
 }
