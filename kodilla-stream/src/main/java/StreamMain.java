@@ -1,18 +1,26 @@
-import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.beautifier.PoemDecorator;
+import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumUser;
+
+import java.time.LocalDate;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StreamMain {
 
     public static void main(String[] args) {
 
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
+        Forum forum = new Forum();
 
-        poemBeautifier.beautify("ALA MA KOTA",text -> text.toLowerCase());
-        poemBeautifier.beautify("ALA MA KOTA",text -> text.concat(" I JEST MILUSI"));
-        poemBeautifier.beautify("       MA      ",text -> text.trim());
-        poemBeautifier.beautify("ala ma kota",text -> text.toUpperCase());
-        poemBeautifier.beautify("ala ma kota",text -> "-----> "+text+" <-----");
+        Map<Integer, ForumUser> resultMapOfUsers = forum.getUsers().stream()
+                .filter(sex -> sex.getSex() == 'M')
+                .filter(age -> (LocalDate.now().getYear() - age.getDateOfBirth().getYear()) > 20)
+                .collect(Collectors.toMap(ForumUser::getUserId, forumUsers -> forumUsers));
 
+
+        System.out.println("# elements: " + resultMapOfUsers.size());
+        resultMapOfUsers.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue())
+                .forEach(System.out::println);
 
 
     }
