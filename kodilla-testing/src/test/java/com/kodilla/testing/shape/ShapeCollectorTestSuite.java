@@ -12,7 +12,7 @@ public class ShapeCollectorTestSuite {
 
     @AfterClass
     public static void afterAllTests() {
-        System.out.println("All tests are finished.");
+        System.out.println("All tests finished.");
     }
 
     @Before
@@ -49,7 +49,7 @@ public class ShapeCollectorTestSuite {
         Triangle triangle = new Triangle("Triangle",12,0.5);
         shapeCollector.addFigure(triangle);
         //When
-        boolean result = shapeCollector.removeFigure(triangle);
+        shapeCollector.removeFigure(triangle);
         //Then
         Assert.assertEquals(0,shapeCollector.getFigures().size());
     }
