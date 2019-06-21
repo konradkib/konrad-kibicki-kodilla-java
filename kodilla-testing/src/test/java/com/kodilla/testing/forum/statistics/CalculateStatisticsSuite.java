@@ -4,8 +4,10 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mock;
 
+import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -25,7 +27,7 @@ public class CalculateStatisticsSuite {
 
         when(statisticsMock.usersNames()).thenReturn(Arrays.asList());
 
-        CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+        CalculateStatistics calculateStatistics = new CalculateStatistics();
 
         //When
         calculateStatistics.calculateAdvStatistics(statisticsMock);
@@ -54,7 +56,7 @@ public class CalculateStatisticsSuite {
                 .collect(Collectors.toList())
         );
 
-        CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+        CalculateStatistics calculateStatistics = new CalculateStatistics();
 
         //When
         calculateStatistics.calculateAdvStatistics(statisticsMock);
@@ -83,7 +85,7 @@ public class CalculateStatisticsSuite {
                 .collect(Collectors.toList())
         );
 
-        CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+        CalculateStatistics calculateStatistics = new CalculateStatistics();
 
         //When
         calculateStatistics.calculateAdvStatistics(statisticsMock);

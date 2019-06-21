@@ -2,7 +2,6 @@ package com.kodilla.testing.forum.statistics;
 
 public class CalculateStatistics {
 
-    Statistics statistics;
 
     private int countUsers;
     private int countPosts;
@@ -33,10 +32,6 @@ public class CalculateStatistics {
 
     public int getCountComments() {
         return countComments;
-    }
-
-    public CalculateStatistics(Statistics statistics) {
-        this.statistics = statistics;
     }
 
     public void calculateAdvStatistics(Statistics statistics){
