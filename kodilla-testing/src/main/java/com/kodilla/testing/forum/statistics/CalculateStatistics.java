@@ -7,10 +7,20 @@ public class CalculateStatistics {
     private int countUsers;
     private int countPosts;
     private int countComments;
+    private double avgPostsPerUser;
+    private double avgCommentsPerUser;
+    private double avgCommentsPerPost;
 
+    public double getAvgPostsPerUser() {
+        return avgPostsPerUser;
+    }
 
-    public Statistics getStatistics() {
-        return statistics;
+    public double getAvgCommentsPerUser() {
+        return avgCommentsPerUser;
+    }
+
+    public double getAvgCommentsPerPost() {
+        return avgCommentsPerPost;
     }
 
     public int getCountUsers() {
@@ -34,9 +44,9 @@ public class CalculateStatistics {
         countPosts = statistics.postCount();
         countComments = statistics.commentCount();
 
-        double avgPostsPerUser = countPosts/countUsers;
-        double avgCommentsPerUser = countComments/countUsers;
-        double avgCommentsPerPost = countComments/countPosts;
+        avgPostsPerUser = (double)countPosts/countUsers;
+        avgCommentsPerUser = (double)countComments/countUsers;
+        avgCommentsPerPost = (double)countComments/countPosts;
 
     }
 
