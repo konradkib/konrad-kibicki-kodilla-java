@@ -22,6 +22,7 @@ public class CalculateStatisticsSuite {
 
         when(statisticsMock.postCount()).thenReturn(100);
         when(statisticsMock.commentCount()).thenReturn(5);
+
         when(statisticsMock.usersNames()).thenReturn(Arrays.asList());
 
         CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
