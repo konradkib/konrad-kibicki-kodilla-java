@@ -40,20 +40,13 @@ public class BookLibraryTest {
         //Given
         LibraryDatabase libraryDatabase = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabase);
-        when(libraryDatabase.listBooksInHandsOf(any(LibraryUser.class))).thenReturn(
-                Arrays.asList());
-//        List<Book> resultListOf0Books = generateListOfNBooks(0);
-//        when(libraryDatabase.listBooksInHandsOf(any(LibraryUser.class))).thenReturn((resultListOf0Books));
+        when(libraryDatabase.listBooksInHandsOf(any(LibraryUser.class)))
+                .thenReturn(Arrays.asList());
         LibraryUser libraryUser = new LibraryUser("firstName","SecondName","23232323");
-
-
         //When
         List<Book> result = bookLibrary.listBooksInHandsOf(libraryUser);
-
         //Then
-
         Assert.assertEquals(0,result.size());
-
     }
 
     @Test
@@ -64,16 +57,11 @@ public class BookLibraryTest {
         Book book = new Book("TestTitle","TestAuthor",2019);
         when(libraryDatabase.listBooksInHandsOf(any(LibraryUser.class))).thenReturn(
                 Arrays.asList(book));
-//        List<Book> resultListOf0Books = generateListOfNBooks(0);
-//        when(libraryDatabase.listBooksInHandsOf(any(LibraryUser.class))).thenReturn((resultListOf0Books));
         LibraryUser libraryUser = new LibraryUser("firstName","SecondName","23232323");
-
-
         //When
         List<Book> result = bookLibrary.listBooksInHandsOf(libraryUser);
         //Then
         Assert.assertEquals(1,result.size());
-
     }
     @Test
     public void testListBooksInHandsOff_fiveBooksRented(){
@@ -83,16 +71,11 @@ public class BookLibraryTest {
         List<Book> fiveBooks = generateListOfNBooks(5);
         when(libraryDatabase.listBooksInHandsOf(any(LibraryUser.class))).thenReturn(
                 fiveBooks);
-//        List<Book> resultListOf0Books = generateListOfNBooks(0);
-//        when(libraryDatabase.listBooksInHandsOf(any(LibraryUser.class))).thenReturn((resultListOf0Books));
         LibraryUser libraryUser = new LibraryUser("firstName","SecondName","23232323");
-
-
         //When
         List<Book> result = bookLibrary.listBooksInHandsOf(libraryUser);
         //Then
         Assert.assertEquals(5,result.size());
-
     }
 
 }
